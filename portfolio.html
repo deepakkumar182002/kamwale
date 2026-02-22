@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Portfolio — Kamwale.tech project showcase across website design, mobile apps, UI/UX, and design." />
+  <title>Portfolio — Kamwale.tech</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230d0d0d'/><text x='5' y='24' font-size='20' font-family='monospace' fill='white'>K</text></svg>" />
+</head>
+
+<body>
+
+  <!-- ══ NAVBAR ══════════════════════════════════════════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">kamwale<span>.tech</span></a>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+          <a href="contact.html" class="btn btn-dark">Get a Quote</a>
+        </div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+  <nav class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+    <div class="mobile-menu-cta">
+      <a href="contact.html" class="btn btn-dark" style="width:100%;justify-content:center;">Get a Quote</a>
+    </div>
+  </nav>
+
+  <!-- ══ PAGE HERO ════════════════════════════════════════ -->
+  <section class="page-hero">
+    <div class="container">
+      <span class="section-tag">Our Work</span>
+      <h1>Projects We're Proud Of</h1>
+      <p style="max-width:540px;margin-top:16px;">
+        A selection of websites, apps, designs, and digital products we've built for
+        our clients — each one a story of collaboration and craft.
+      </p>
+    </div>
+  </section>
+
+  <!-- ══ PORTFOLIO GRID ═══════════════════════════════════ -->
+  <section style="background:var(--bg);padding-top:48px;">
+    <div class="container">
+
+      <!-- Filter Tabs -->
+      <div class="portfolio-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="web">Web Development</button>
+        <button class="filter-btn" data-filter="app">Mobile Apps</button>
+        <button class="filter-btn" data-filter="uiux">UI/UX</button>
+        <button class="filter-btn" data-filter="design">Graphics & Branding</button>
+        <button class="filter-btn" data-filter="3d">3D Design</button>
+      </div>
+
+      <!-- Projects -->
+      <div class="portfolio-grid">
+
+        <!-- ═══ DYNAMIC WEBSITES ═══ -->
+
+        <!-- 1. MetroBrix.com -->
+        <div class="portfolio-card reveal" data-category="web">
+          <a href="https://metrobrix.com" target="_blank">
+            <div class="portfolio-thumb">
+              <img src="./img/1.png" alt="MetroBrix real estate website preview" loading="lazy" />
+            </div>
+          </a>
+          <div class="portfolio-info">
+            <span class="tag">Dynamic Website</span>
+            <h3>MetroBrix — Real Estate Portal</h3>
+            <p>Full-featured property listing platform with advanced search, agent profiles, and a custom admin panel
+              for complete content management.</p>
+            <a href="https://metrobrix.com" target="_blank" rel="noopener" class="portfolio-visit">metrobrix.com ↗</a>
+          </div>
+        </div>
+
+        <!-- 2. Token — Real Estate Mobile App -->
+        <div class="portfolio-card reveal" data-category="app">
+          <div class="portfolio-thumb app-thumb">
+            <span class="app-thumb-icon">🏠</span>
+            <span class="app-thumb-label">Real Estate App</span>
+          </div>
+          <div class="portfolio-info">
+            <span class="tag">Mobile App</span>
+            <h3>Token — Real Estate Mobile App</h3>
+            <p>Dynamic property discovery app featuring listings, virtual tour booking, EMI calculator, and direct agent
+              chat — built for iOS & Android.</p>
+          </div>
+        </div>
+
+        <!-- 3. Dating Mobile App -->
+        <div class="portfolio-card reveal" data-category="app">
+          <div class="portfolio-thumb dating-thumb">
+            <span class="app-thumb-icon">💞</span>
+            <span class="app-thumb-label">Dating App</span>
+          </div>
+          <div class="portfolio-info">
+            <span class="tag">Mobile App</span>
+            <h3>Dating App — Connect & Match</h3>
+            <p>Modern swipe-based dating application with smart match algorithm, real-time messaging, profile discovery,
+              and privacy controls.</p>
+          </div>
+        </div>
+
+        <!-- ═══ STATIC WEBSITES ═══ -->
+
+        <!-- 4. EcoSun Energy Solutions -->
+        <div class="portfolio-card reveal" data-category="web">
+          <a href="https://ecosunenergysolutions.in" target="_blank">
+
+            <div class="portfolio-thumb">
+              <img src="/img/2.png" alt="EcoSun Energy Solutions website preview" loading="lazy" />
+            </div>
+          </a>
+          <div class="portfolio-info">
+            <span class="tag">Static Website</span>
+            <h3>EcoSun Energy — Solar Services</h3>
+            <p>Professional solar energy service website with product catalogue, installation process walkthrough, and
+              customer inquiry forms.</p>
+            <a href="https://ecosunenergysolutions.in" target="_blank" rel="noopener"
+              class="portfolio-visit">ecosunenergysolutions.in ↗</a>
+          </div>
+        </div>
+
+        <!-- 5. RideWaves -->
+        <div class="portfolio-card reveal" data-category="web">
+          <a href="https://ridewaves.in" target="_blank">
+
+            <div class="portfolio-thumb">
+              <img src="/img/3.png" alt="RideWaves travel website preview" loading="lazy" />
+          </a>
+        </div>
+        <div class="portfolio-info">
+          <span class="tag">Static Website</span>
+          <h3>RideWaves — Travel & Tours</h3>
+          <p>Travel service website featuring curated tour packages, destination highlights, booking inquiry forms,
+            and a mobile-responsive layout.</p>
+          <a href="https://ridewaves.in" target="_blank" rel="noopener" class="portfolio-visit">ridewaves.in ↗</a>
+        </div>
+      </div>
+
+      <!-- 6. ShodhShala -->
+      <div class="portfolio-card reveal" data-category="web">
+        <a href="https://www.shodhshala.com" target="_blank">
+          <div class="portfolio-thumb">
+            <img src="/img/4.png" alt="ShodhShala company website preview" loading="lazy" />
+          </div>
+        </a>
+        <div class="portfolio-info">
+          <span class="tag">Static Website</span>
+          <h3>ShodhShala — Research & Services</h3>
+          <p>Clean service-based company website with detailed offerings, team showcase, client testimonials, and a
+            contact inquiry system.</p>
+          <a href="https://www.shodhshala.com" target="_blank" rel="noopener" class="portfolio-visit">shodhshala.com ↗</a>
+        </div>
+      </div>
+
+      <!-- ═══ WIX DESIGN ═══ -->
+
+      <!-- 7. FlameBack Tech -->
+      <div class="portfolio-card reveal" data-category="web">
+        <a href="https://flamebacktech.com" target="_blank">
+          <div class="portfolio-thumb">
+            <img src="/img/5.png" alt="FlameBack Tech drone website preview" loading="lazy" />
+          </div>
+        </a>
+        <div class="portfolio-info">
+          <span class="tag tag-wix">Wix Design</span>
+          <h3>FlameBack Tech — Drone Components</h3>
+          <p>Premium drone components manufacturer site built on Wix, featuring product catalogue, technical specs,
+            and B2B enquiry — sleek industrial aesthetic.</p>
+          <a href="https://flamebacktech.com" target="_blank" rel="noopener" class="portfolio-visit">flamebacktech.com
+            ↗</a>
+        </div>
+      </div>
+
+      <!-- ═══ COMING SOON — UI/UX · Branding · 3D ═══ -->
+
+      <div class="portfolio-card reveal" data-category="uiux">
+        <div class="portfolio-thumb" style="flex-direction:column;gap:8px;opacity:.5;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <rect x="3" y="3" width="18" height="18" rx="3" />
+            <path d="M8 12h8M12 8v8" />
+          </svg>
+          <span style="font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;">Coming Soon</span>
+        </div>
+        <div class="portfolio-info">
+          <span class="tag">UI/UX Design</span>
+          <h3>Projects Coming Soon</h3>
+          <p>Our UI/UX design portfolio is being updated. New case studies will be added shortly.</p>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal" data-category="design">
+        <div class="portfolio-thumb" style="flex-direction:column;gap:8px;opacity:.5;">
+          <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2">
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 3v3M12 18v3M3 12h3M18 12h3" />
+          </svg>
+          <span style="font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;">Coming Soon</span>
+        </div>
+        <div class="portfolio-info">
+          <span class="tag">Graphics & Branding</span>
+          <h3>Projects Coming Soon</h3>
+          <p>Brand identity and graphics projects will be showcased here shortly.</p>
+        </div>
+      </div>
+
+      <div class="portfolio-card reveal" data-category="3d">
+        <div class="portfolio-thumb">
+          <img src="/img/1715339649088.gif" alt="Arduini Controller design" loading="lazy" />
+        </div>
+        <div class="portfolio-info">
+          <span class="tag">3D Design</span>
+          <h3>Projects Coming Soon</h3>
+          <p>3D modelling and architectural visualisation projects will be added here very soon.</p>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+  <!-- ══ CTA BANNER ═══════════════════════════════════════ -->
+  <section class="cta-banner" style="margin-top:96px;">
+    <div class="container">
+      <span class="section-tag" style="color:rgba(255,255,255,0.4);">Next Project</span>
+      <h2>Want to be on this list?</h2>
+      <p>Let's build something worth showcasing together.</p>
+      <div class="btn-actions">
+        <a href="contact.html" class="btn btn-white">Start a Project</a>
+        <a href="services.html" class="btn btn-outline"
+          style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.7);">Our Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ═══════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="nav-logo">kamwale<span>.tech</span></a>
+          <p>A software development studio delivering clean, professional digital solutions — websites, apps, design,
+            and more.</p>
+          <div class="footer-social">
+            <a href="#" class="social-icon" title="LinkedIn">in</a>
+            <a href="#" class="social-icon" title="Twitter/X">𝕏</a>
+            <a href="#" class="social-icon" title="Instagram">ig</a>
+            <a href="#" class="social-icon" title="GitHub">gh</a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="portfolio.html">Portfolio</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="services.html">Website Design</a></li>
+            <li><a href="services.html">Mobile Apps</a></li>
+            <li><a href="services.html">UI/UX Design</a></li>
+            <li><a href="services.html">Graphics & Logo</a></li>
+            <li><a href="services.html">3D Modelling</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:kamwale.tech@gmail.com">kamwale.tech@gmail.com</a></li>
+            <li><a href="tel:+918273243959">+91 82732 43959</a></li>
+            <li><a href="https://wa.me/918273243959" target="_blank">WhatsApp Us</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Kamwale.tech — All rights reserved.</p>
+        <p>Made with care by the Kamwale team.</p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Back to top">↑</button>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
