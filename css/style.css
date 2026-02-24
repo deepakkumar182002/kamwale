@@ -116,14 +116,18 @@ section { padding: 96px 0; }
   border-color: #2a2a2a;
 }
 
-.btn-outline {
+.btn .btn-outline {
+  /* color: white; */
   background: transparent;
-  color: var(--text);
+  /* color: var(--text); */
   border-color: var(--border);
 }
 
 .btn-outline:hover {
-  background: var(--bg-soft);
+  color: white;
+  /* background: var(--bg-soft); */
+  background-color: black;
+
   border-color: var(--text);
 }
 
@@ -281,6 +285,7 @@ section { padding: 96px 0; }
 .hero h1 em {
   font-style: normal;
   color: var(--text-muted);
+  /* color: hsl(85, 85%, 45%); */
 }
 
 .hero-desc {
@@ -1250,8 +1255,9 @@ section { padding: 96px 0; }
   .grid-2, .grid-3, .why-us-grid, .contact-layout { grid-template-columns: 1fr; }
   .services-full-grid, .portfolio-grid, .testi-grid, .values-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
-  .hero { padding: 80px 0 64px; }
-  .hero-stats { gap: 32px; }
+  .hero { padding:40px 0 64px; }
+  .hero-stats { gap: 32px; scale: calc(90%);}
+
   .services-header { flex-direction: column; align-items: flex-start; }
   .why-visual { display: none; }
   .footer-grid { grid-template-columns: 1fr; gap: 32px; }
