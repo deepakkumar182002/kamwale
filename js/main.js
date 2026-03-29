@@ -6,10 +6,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Theme toggle (light/dark) ─────────────────── */
   const themeToggles = document.querySelectorAll('.theme-toggle');
+  const themeLogos = document.querySelectorAll('[data-logo-dark][data-logo-light]');
   const themeKey = 'kamwale-theme';
 
   function applyTheme(theme) {
     document.body.setAttribute('data-theme', theme);
+    themeLogos.forEach(logo => {
+      logo.src = theme === 'dark' ? logo.dataset.logoLight : logo.dataset.logoDark;
+    });
     const nextIcon = theme === 'dark' ? '☀' : '☾';
     const nextLabel = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
     themeToggles.forEach(btn => {
