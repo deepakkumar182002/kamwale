@@ -4,6 +4,34 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ── Theme toggle (light/dark) ─────────────────── */
+  const themeToggles = document.querySelectorAll('.theme-toggle');
+  const themeKey = 'kamwale-theme';
+
+  function applyTheme(theme) {
+    document.body.setAttribute('data-theme', theme);
+    const nextIcon = theme === 'dark' ? '☀' : '☾';
+    const nextLabel = theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+    themeToggles.forEach(btn => {
+      btn.textContent = nextIcon;
+      btn.setAttribute('aria-label', nextLabel);
+      btn.setAttribute('title', nextLabel);
+    });
+  }
+
+  const savedTheme = localStorage.getItem(themeKey);
+  const preferredDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  applyTheme(savedTheme || (preferredDark ? 'dark' : 'light'));
+
+  themeToggles.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const currentTheme = document.body.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
+      const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      applyTheme(nextTheme);
+      localStorage.setItem(themeKey, nextTheme);
+    });
+  });
+
   /* ── Navbar scroll effect ──────────────────────── */
   const navbar = document.getElementById('navbar');
   if (navbar) {
@@ -98,22 +126,67 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Contact form submission ───────────────────── */
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
-    contactForm.addEventListener('submit', e => {
+    contactForm.addEventListener('submit', async e => {
       e.preventDefault();
+      if (!contactForm.checkValidity()) {
+        contactForm.reportValidity();
+        return;
+      }
+
       const btn = contactForm.querySelector('button[type="submit"]');
       const success = document.getElementById('formSuccess');
+      const error = document.getElementById('formError');
       btn.textContent = 'Sending…';
       btn.disabled = true;
-      // Simulate a short delay (replace with real API call)
-      setTimeout(() => {
+
+      if (success) success.style.display = 'none';
+      if (error) error.style.display = 'none';
+
+      try {
+        const formData = new FormData(contactForm);
+        formData.append('_subject', 'New Project Inquiry - Kamwale.tech');
+        formData.append('_captcha', 'false');
+
+        const response = await fetch('https://formsubmit.co/ajax/kamwale.tech@gmail.com', {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: formData,
+        });
+
+        const result = await response.json();
+        if (!response.ok || (result.success !== true && result.success !== 'true')) {
+          throw new Error(result.message || 'Unable to send message right now.');
+        }
+
         contactForm.reset();
-        btn.textContent = 'Send Message';
-        btn.disabled = false;
         if (success) {
           success.style.display = 'block';
           setTimeout(() => { success.style.display = 'none'; }, 5000);
         }
-      }, 1200);
+      } catch (err) {
+        const fallbackBody = [
+          `Name: ${contactForm.fname?.value || ''} ${contactForm.lname?.value || ''}`.trim(),
+          `Email: ${contactForm.email?.value || ''}`,
+          `Phone: ${contactForm.phone?.value || ''}`,
+          `Service: ${contactForm.service?.value || ''}`,
+          `Budget: ${contactForm.budget?.value || ''}`,
+          '',
+          'Project Details:',
+          contactForm.message?.value || '',
+        ].join('\n');
+
+        const mailtoUrl = `mailto:kamwale.tech@gmail.com?subject=${encodeURIComponent('New Project Inquiry - Kamwale.tech')}&body=${encodeURIComponent(fallbackBody)}`;
+
+        if (error) {
+          error.textContent = 'Direct submit failed. Opening your email app with a pre-filled message.';
+          error.style.display = 'block';
+        }
+
+        window.location.href = mailtoUrl;
+      } finally {
+        btn.textContent = 'Send Message';
+        btn.disabled = false;
+      }
     });
   }
 
